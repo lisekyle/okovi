@@ -1,0 +1,258 @@
+// Base
+.app {
+  background-color: $black;
+  height: 100vh;
+  display: flex;
+}
+
+@keyframes fade-in {
+  /* You could think of as "step 1" */
+  0% {
+    opacity: 0;
+  }
+  /* You could think of as "step 2" */
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  /* You could think of as "step 1" */
+  0% {
+    opacity: 1;
+  }
+  /* You could think of as "step 2" */
+  100% {
+    opacity: 0;
+  }
+}
+
+.container {
+  margin: auto;
+  text-align: center;
+  z-index: 2;
+  position: fixed;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  height: 100vh;
+  display: flex;
+
+  .wrapper {
+    margin: auto;
+    width: 100%;
+
+    .video {
+      width: 100vw;
+    }
+  }
+
+}
+
+.background {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: $black;
+
+  &--hidden {
+    visibility: hidden;
+  }
+
+  video {
+    min-width: 100vw;
+    min-height: 100vh;
+    position: fixed;
+    opacity: 0;
+    animation: fade-in 4s;
+    animation-fill-mode: forwards;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &:before {
+    content: "";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0.7;
+    width: 100vw;
+    height: 100vh;
+    background-color: $black;
+  }
+
+}
+
+.title {
+  animation: slide-up-fade-in ease-in-out 2s;
+  animation-iteration-count: 1;
+  animation-delay: 2.5s;
+  transform-origin: 50% 50%;
+  animation-fill-mode:forwards; /*when the spec is finished*/
+  opacity:0;
+
+}
+
+
+a {
+  font-family: $apercu-mono;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 12px;
+  text-decoration: none !important;
+  transition-duration: 0.5s;
+  color: rgba(255, 255, 255, 0.7) !important;
+
+  &:hover {
+    color: #fff !important;
+  }
+}
+
+// Main
+p {
+  margin-bottom: 24px;
+}
+
+// Share
+.share-overlay {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: $black;
+
+}
+
+.share__icons {
+  li {
+    display: inline-block;
+    list-style: none;
+    margin-right: 28px;
+    text-align: center;
+
+    &:first-child {
+      margin-left: 8px;
+    }
+
+  }
+}
+
+.social-icon {
+  width: 30px !important;
+  height: 30px !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+  cursor: pointer;
+  transition-duration: 0.5s;
+
+  &:hover {
+    color: white;
+  }
+
+  circle {
+    fill: transparent !important;
+  }
+}
+
+.top__wrapper {
+  margin: 100px auto 0 auto;
+}
+
+a.replay,
+a.download {
+  text-decoration: none;
+  transition-duration: 0.5s;
+
+  &:hover {
+    &:before {
+      color: white;
+    }
+
+  }
+
+}
+
+a.replay {
+  &:before {
+    content: url(images/replay.svg);
+    vertical-align: -webkit-baseline-middle;
+    padding-right: 8px;
+
+  }
+
+}
+
+a.download {
+  margin-left: 32px;
+  &:before {
+    content: url(images/download.svg);
+    vertical-align: -webkit-baseline-middle;
+    padding-right: 10px;
+    transition-duration: 0.5s;
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+}
+
+
+.share__wrapper {
+  margin: 100px auto 0 auto ;
+}
+
+.share__buttons {
+  margin-top: 40px;
+
+  p {
+    font-size: 10px;
+    margin-bottom: 8px;
+  }
+
+}
+
+.share__homepage {
+  margin-top: 100px;
+}
+
+.animated-in  {
+  animation: fade-in 3s;
+  opacity: 1;
+}
+
+.animated-out {
+  animation: fade-out 3s;
+  opacity: 0;
+}
+
+// share__homepage
+.one--share,
+.two--share,
+.three--share,
+.four--share {
+  opacity:0;
+  animation: slide-up-fade-in ease 1.5s;
+  animation-iteration-count: 1;
+  transform-origin: 50% 50%;
+  animation-fill-mode:forwards; /*when the spec is finished*/
+}
+
+.one--share {
+  animation-delay: 0s
+}
+
+.two--share {
+  animation-delay: .33s;
+}
+
+.three--share {
+  animation-delay: .66s;
+}
+
+.four--share {
+  animation-delay: 1s;
+}

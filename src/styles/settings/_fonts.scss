@@ -1,0 +1,19 @@
+// Fonts
+
+@font-face {
+	font-family: 'Apercu Mono';
+	src: 	url('fonts/apercu/apercu_mono-webfont.woff2') format('woff2'),
+				url('fonts/apercu/apercu-mono-webfont.woff') format('woff'),
+				url('fonts/apercu/apercu-mono-webfont.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Brandon Text';
+	src: 	url('fonts/brandon-text/brandon-text.woff') format('woff'),
+			 	url('fonts/brandon-text/brandon-text.ttf') format('truetype'),
+				url('fonts/brandon-text/brandon-text.woff2') format('woff2');
+}
+
+// Font Stack
+$apercu-mono: 'Apercu Mono';
+$brandon-text: 'Brandon Text';
